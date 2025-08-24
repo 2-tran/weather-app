@@ -1,0 +1,127 @@
+.card {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-gray-900);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 567px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.dayCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  transition: background-color 0.2s ease;
+}
+
+.dayCard:hover {
+  background-color: var(--color-gray-100);
+}
+
+.date {
+  font-size: var(--text-md);
+  font-weight: var(--font-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.tempBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.tempMax {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-blue-600);
+}
+
+.tempMin {
+  font-size: var(--text-sm);
+  color: var(--color-gray-500);
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.statRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-xs);
+}
+
+.statLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-gray-600);
+}
+
+.humidityIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--color-blue-500);
+}
+
+.windIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--color-green-500);
+}
+
+.statValue {
+  font-weight: var(--font-medium);
+}

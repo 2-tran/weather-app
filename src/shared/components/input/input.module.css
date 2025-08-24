@@ -1,0 +1,55 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-gray-300);
+  background-color: var(--color-white);
+  padding: 0.5rem 0.75rem;
+  font-size: var(--text-sm);
+  line-height: 1.25rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--color-gray-500);
+}
+
+.input::file-selector-button {
+  border: 0;
+  background: transparent;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-blue-500);
+  border-color: var(--color-blue-500);
+}
+
+.input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.inputError {
+  border-color: var(--color-red-500);
+}
+
+.inputError:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-red-300);
+  border-color: var(--color-red-500);
+}
+
+.errorText {
+  margin-top: 0.25rem;
+  font-size: var(--text-sm);
+  color: var(--color-red-300);
+}

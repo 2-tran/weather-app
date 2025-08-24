@@ -1,0 +1,35 @@
+.errorContainer {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-gray-200);
+  background-color: var(--color-white);
+  color: var(--color-gray-950);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  width: 100%;
+  padding: 1rem;
+}
+
+.errorBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--color-red-50);
+  border: 1px solid var(--color-red-200);
+  border-radius: var(--radius-md);
+  color: var(--color-red-700);
+}
+
+.errorIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.errorClose {
+  margin-left: 0.5rem;
+  color: var(--color-red-300);
+  transition: color 0.2s;
+}
+.errorClose:hover {
+  color: var(--color-red-800);
+}

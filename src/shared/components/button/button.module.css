@@ -1,0 +1,84 @@
+.base {
+  composes: flexCenter from "@/shared/styles/utils.module.css";
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  transition: all 0.2s;
+  outline: none;
+  cursor: pointer;
+}
+
+.base:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-blue-600);
+}
+
+.base:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.primary {
+  background-color: var(--color-blue-600);
+  color: #fff;
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-blue-700);
+}
+
+.secondary {
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-900);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-gray-200);
+}
+
+.outline {
+  border: 1px solid var(--color-gray-300);
+  background-color: transparent;
+}
+
+.outline:hover:not(:disabled) {
+  background-color: var(--color-gray-50);
+}
+
+.ghost {
+  background-color: transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: var(--color-gray-100);
+}
+
+.sm {
+  height: 2rem;
+  padding: 0 0.75rem;
+  font-size: var(--text-sm);
+}
+
+.md {
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  font-size: var(--text-md);
+}
+
+.lg {
+  height: 3rem;
+  padding: 0 1.5rem;
+  font-size: var(--text-lg);
+}
+
+.spinner {
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
