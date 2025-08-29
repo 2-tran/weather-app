@@ -1,5 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import axios from "axios";
+import { TIME_CONFIG } from "@/config/constants";
 
 export function cn(...inputs: ClassValue[]) {
   return clsx(inputs);
@@ -65,4 +66,20 @@ export async function withRetry<T>(
     }
   }
   throw lastError;
+}
+
+export function formatTime(timestamp: number) {
+  const now = Date.now();
+  const diffInMs = now - timestamp;
+
+  const diffInSeconds = Math.floor(diffInMs / TIME_CONFIG.MS_PER_SECOND);
+  const diffInMinutes = Math.floor(diffInMs / TIME_CONFIG.MS_PER_MINUTE);
+  const diffInHours = Math.floor(diffInMs / TIME_CONFIG.MS_PER_HOUR);
+
+  if (diffInSeconds < 60) return "Just now";
+  if (diffInMinutes < 60) return `${diffInMinutes}m ago`;
+  if (diffInHours < TIME_CONFIG.HOURS_PER_DAY) return `${diffInHours}h ago`;
+
+  const diffInDays = Math.floor(diffInHours / TIME_CONFIG.HOURS_PER_DAY);
+  return `${diffInDays}d ago`;
 }

@@ -15,6 +15,8 @@ export const WEATHER_CONFIG = {
 } as const;
 
 export const TIME_CONFIG = {
+  MS_PER_SECOND: 1000,
+  MS_PER_MINUTE: 1000 * 60,
   MS_PER_HOUR: 1000 * 60 * 60,
   HOURS_PER_DAY: 24,
 } as const;

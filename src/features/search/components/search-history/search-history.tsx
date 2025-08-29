@@ -5,8 +5,8 @@ import { SearchHistory } from "../../types/search";
 import { Clock, Trash2 } from "lucide-react";
 import { Button } from "@/shared/components/button/button";
 import styles from "./search-history.module.css";
-import { useSearchHistoryComponent } from "./use-search-history";
 import RenderWhen from "@/shared/components/render-when/render-when";
+import { formatTime } from "@/shared";
 
 interface SearchHistoryProps {
   history: SearchHistory[];
@@ -19,8 +19,6 @@ export function SearchHistoryComponent({
   onSelectCity,
   onClearHistory,
 }: SearchHistoryProps) {
-  const { formatTime } = useSearchHistoryComponent(history);
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
